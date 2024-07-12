@@ -1,7 +1,8 @@
 # evaluate-llm
 
-Example React component for scoring LLM responses with Langtrace.ai.
 ![LLM React Evaluation Component](assets/llm_eval_component.png)
+
+Example React component for scoring LLM responses with Langtrace.ai.
 
 ## How it Works
 
