@@ -18,7 +18,7 @@ Visit Langtrace.ai and sign up for an account. Once registered, create a new pro
 
 ### Step 2: Add your API Keys
 
-In the /evaluate-llm/app/api/upload/route.ts file add your Langtrace API key and your OpenAI API key.
+In the `/evaluate-llm/app/api/upload/route.ts`{:.python} file add your Langtrace API key and your OpenAI API key.
 
 ### Step 3: Run the NextJS Application
 
