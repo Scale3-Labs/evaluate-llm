@@ -2,7 +2,7 @@
 
 ![LLM React Evaluation Component](assets/llm_eval_component.png)
 
-Example React component for scoring LLM responses with Langtrace.ai.
+Example NextJS project with React component for scoring LLM responses with Langtrace.ai.
 
 ## How it Works
 
@@ -16,30 +16,23 @@ The backend function handles the feedback submission, sending the data to Langtr
 
 Visit Langtrace.ai and sign up for an account. Once registered, create a new project and generate an API key for your project.
 
-### Step 2: Install the SDK
+### Step 2: Add your API Keys
 
-Install the Langtrace TypeScript SDK in your project:
+In the /evaluate-llm/app/api/upload/route.ts file add your Langtrace API key and your OpenAI API key.
 
-```
-npm i @langtrase/typescript-sdk
-```
+### Step 3: Run the NextJS Application
 
-```javascript
-// Must precede any llm module imports
-import * as Langtrace from "@langtrase/typescript-sdk";
+Run **npm i** to install all dependencies.
 
-Langtrace.init({ api_key: "<LANGTRACE_API_KEY>" });
-```
+Run **npm run dev** to run the NextJS project. You can view the application at **http://localhost:3000**
 
-### Step 3: Implement the Feedback component
+### Step 4: Test the upload and feedback capabilites.
 
-Copy and paste the react component found in **react-component/feedback.tsx**
+Upload a photo of your favorite meal by selecting a file or dropping in a jpeg. Then select **Upload Meal**.
 
-### Step 4: Create function/API to handle sending user feedback
+After a few seconds, you will see the nutrition information for the uploaded meal. You can view the traces, metrics, and evaluations by navigating to langtrace.ai and selecting the project whose API key you are using.
 
-If you are running a NextJS application, you can copy and paste the API in **example-nextjs-api/route.ts**
-
-### Step 5: Run your application and view your evaluations in Langtrace!
+Finally, click on either the Thumbs Up or Thumbs Down icon within the web application to evaluate the LLM response. You can view the user feedback by navigating to the **/annotations** page within Langtrace.ai and viewing the **User Score** column.
 
 Evaluation in action:
 ![evaluated response](assets/evaluated_response.png)
