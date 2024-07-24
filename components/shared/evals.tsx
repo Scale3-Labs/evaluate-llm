@@ -1,11 +1,20 @@
 import { ThumbsDown, ThumbsUp } from "lucide-react";
 import { useState } from "react";
 
-export default function Feedback() {
+export default function Evals({
+  userId,
+  traceId,
+  spanId,
+}: {
+  userId: string;
+  traceId: string;
+  spanId: string;
+}) {
   const [selected, setSelected] = useState("");
 
   const handleThumbsClick = async (score: number) => {
     setSelected(score === 1 ? "up" : "down");
+    console.log("click", traceId, spanId);
     try {
       await fetch("/api/feedback", {
         method: "POST",
@@ -13,10 +22,10 @@ export default function Feedback() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          userId: "<user-id>",
+          userId: userId,
           userScore: score,
-          traceId: "<trace-id>",
-          spanId: "<span-id>",
+          traceId: traceId,
+          spanId: spanId,
         }),
       });
     } catch (error: any) {

@@ -1,13 +1,5 @@
 import * as Langtrace from "@langtrase/typescript-sdk";
 import { NextRequest, NextResponse } from "next/server";
-// prettier-ignore
-Langtrace.init({ api_key: '<LANGTRACE_API_KEY>', 
-instrumentations: {
-  openai: OpenAI,
-},
- });
-// prettier-ignore
-import OpenAI from "openai";
 
 export async function POST(req: NextRequest) {
   try {
@@ -25,6 +17,7 @@ export async function POST(req: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
+    console.log("error", error);
     return NextResponse.json(
       {
         error: "Something went wrong while sending feedback",
