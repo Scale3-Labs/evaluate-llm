@@ -1,5 +1,7 @@
 # evaluate-llm
 
+![NextJS Project Example](assets/react_eval.gif)
+
 ![LLM React Evaluation Component](assets/llm_eval_component.png)
 
 Example NextJS project with React component for scoring LLM responses with Langtrace.ai.
